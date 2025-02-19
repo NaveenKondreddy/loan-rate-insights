@@ -7,11 +7,13 @@
 - Determines the **best day** (before the biggest rate increase).
 - Determines the **worst day** (before the biggest rate drop).
 - Displays results in a simple **React UI**.
+- Includes **unit tests** using Jest and Supertest.
 
 ## 🛠️ Tech Stack
 - **Frontend**: React.js
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB Atlas
+- **Testing**: Jest, Supertest
 
 ## 📌 API Endpoints
 - **`GET /rates`** → Returns all mortgage rates.
@@ -54,3 +56,8 @@ To add sample mortgage rates to MongoDB:
 npm run seed
 ```
 
+### 5️⃣ Run Unit Tests
+To run Jest tests for the backend:
+```sh
+npm test
+```
