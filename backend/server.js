@@ -22,10 +22,8 @@ const rateSchema = new mongoose.Schema({
 app.get('/rates', async (req, res) => {
     try {
         const rates = await Rate.find();
-        console.log("Fetched Rates from DB:", rates);
         res.json(rates);
     } catch (error) {
-        console.error("Error fetching rates:", error);
         res.status(500).json({ message: "Error fetching rates", error });
     }
 });
@@ -62,4 +60,3 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 module.exports = app;
-
