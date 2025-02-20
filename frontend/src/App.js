@@ -1,35 +1,42 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function App() {
-    const [rates, setRates] = useState([]);
-    const [bestWorstDays, setBestWorstDays] = useState({});
+    const [bestWorstDays, setBestWorstDays] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/rates")
-            .then(res => setRates(res.data))
-            .catch(err => console.log(err));
+        const fetchData = async () => {
+            try {
+                const bestWorstRes = await axios.get(`${API_URL}/best-worst-days`);
+                setBestWorstDays(bestWorstRes.data);
+            } catch (err) {
+                setError("Failed to load data. Please try again later.");
+                console.error("Error fetching data:", err);
+            }
+        };
 
-        axios.get("http://localhost:5000/best-worst-days")
-            .then(res => setBestWorstDays(res.data))
-            .catch(err => console.log(err));
+        fetchData();
     }, []);
 
     return (
         <div style={{ padding: "20px", textAlign: "center" }}>
             <h1>Loan Rate Insights</h1>
-            <h2>Best Day: {bestWorstDays.bestDay}</h2>
-            <h2>Worst Day: {bestWorstDays.worstDay}</h2>
 
-            {/* <h3>Historical Rates:</h3>
-            <ul>
-                {rates.map((rate, index) => (
-                    <li key={index}>{rate.date}: {rate.rate}%</li>
-                ))}
-            </ul> */}
+            {error ? (
+                <h2 style={{ color: "red" }}>{error}</h2>
+            ) : bestWorstDays ? (
+                <>
+                    <h2>Best Day: {bestWorstDays.bestDay}</h2>
+                    <h2>Worst Day: {bestWorstDays.worstDay}</h2>
+                </>
+            ) : (
+                <h2>Loading best and worst days...</h2>
+            )}
         </div>
     );
 }
 
 export default App;
-  
