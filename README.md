@@ -4,8 +4,8 @@
 
 ## 🚀 Features
 - Fetches mortgage rate data from **MongoDB Atlas**.
-- Determines the **best day** (before the biggest rate increase).
-- Determines the **worst day** (before the biggest rate drop).
+- Determines the **best day(s)** (lowest mortgage rate with the highest rate drop from the previous day or next day).
+- Determines the **worst day(s)** (highest mortgage rate with the highest rate increase from the previous day or next day).
 - Displays results in a simple **React UI**.
 - Includes **unit tests** using Jest and Supertest.
 
@@ -16,14 +16,14 @@
 - **Testing**: Jest, Supertest
 
 ## 📌 API Endpoints
-- **`GET /rates`** → Returns all mortgage rates.
-- **`GET /best-worst-days`** → Returns the best & worst days to price the loan.
+- **`GET /api/rates`** → Returns all mortgage rates.
+- **`GET /api/best-worst-days`** → Returns the best & worst days to price the loan based on lowest/highest rates, with tie-breaking based on rate increase/decrease trends.
 
 ## 🚀 Running the Project
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/NaveenKondreddy/loan-rate-insights.git
+git clone https://github.com/YOUR_USERNAME/loan-rate-insights.git
 cd loan-rate-insights
 ```
 
