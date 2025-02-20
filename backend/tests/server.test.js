@@ -31,10 +31,10 @@ describe("API Endpoints", () => {
   });
 
   // Test specific best and worst day values
-  it("should return best day as 2024-02-17 and worst day as 2024-02-14", async () => {
+  it("should return best day as 2024-02-20 and worst day as 2024-02-14", async () => {
     const res = await request(app).get("/api/best-worst-days");
     expect(res.statusCode).toBe(200);
-    expect(res.body.bestDay).toBe("2024-02-17");
+    expect(res.body.bestDay).toBe("2024-02-20");
     expect(res.body.worstDay).toBe("2024-02-14");
   });
 

@@ -29,8 +29,8 @@ function App() {
                 <h2 style={{ color: "red" }}>{error}</h2>
             ) : bestWorstDays ? (
                 <>
-                    <h2>Best Day: {bestWorstDays.bestDay}</h2>
-                    <h2>Worst Day: {bestWorstDays.worstDay}</h2>
+                    <h2>Best Day(s): {bestWorstDays.bestDays ? bestWorstDays.bestDays.join(", ") : "N/A"}</h2>
+                    <h2>Worst Day(s): {bestWorstDays.worstDays ? bestWorstDays.worstDays.join(", ") : "N/A"}</h2>
                 </>
             ) : (
                 <h2>Loading best and worst days...</h2>

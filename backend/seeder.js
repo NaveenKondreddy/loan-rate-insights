@@ -15,7 +15,7 @@ const rateSchema = new mongoose.Schema({
     rate: Number
 });
 
-const Rate = mongoose.model("loan-rates", rateSchema, "loan-rates");
+const Rate = mongoose.model("Rate", rateSchema, "loan-rates");
 
 // Sample mortgage rates data
 const sampleRates = [
@@ -28,7 +28,8 @@ const sampleRates = [
     { date: "2024-02-16", rate: 6.6 },
     { date: "2024-02-17", rate: 6.1 },
     { date: "2024-02-18", rate: 6.4 },
-    { date: "2024-02-19", rate: 6.2 }
+    { date: "2024-02-19", rate: 6.2 },
+    { date: "2024-02-20", rate: 6.0 },
 ];
 
 // Function to insert data
