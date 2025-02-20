@@ -23,7 +23,7 @@
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/YOUR_USERNAME/loan-rate-insights.git
+git clone https://github.com/NaveenKondreddy/loan-rate-insights.git
 cd loan-rate-insights
 ```
 
