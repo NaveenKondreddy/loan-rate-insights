@@ -98,7 +98,6 @@ npm test
 
 ---
 
----
 
 ## **📌 How Best & Worst Days Are Calculated**
 
